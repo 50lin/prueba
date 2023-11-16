@@ -12,7 +12,7 @@ services:
       - LETSENCRYPT_HOST=linocodelab.com
       - LETSENCRYPT_EMAIL=admin@linocodelab.com
     networks:
-      - proxy
+      - nginx-proxy
     restart: unless-stopped
 
 networks:
