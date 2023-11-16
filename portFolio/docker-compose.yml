@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  react-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    expose:
+      - "80"
+    environment:
+      - VIRTUAL_HOST=linocodelab.com
+      - LETSENCRYPT_HOST=linocodelab.com
+      - LETSENCRYPT_EMAIL=admin@linocodelab.com
+    networks:
+      - proxy
+    restart: unless-stopped
